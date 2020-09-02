@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Loony_Lips"
+run/main_scene="res://LoonyLips.tscn"
 config/icon="res://icon.png"
 
 [rendering]
