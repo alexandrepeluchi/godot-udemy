@@ -2,15 +2,16 @@ extends Control
 
 var player_words = []
 var prompts = ["um nome", "um substantivo", "um adverbio", "um adjetivo"]
-var story = "Era uma vez, alguém chamado %s comeu um sanduiche recheado de %s que fez se sentir %s, por dentro. Este foi um dia %s."
+var story = "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fez se sentir %s, por dentro. Este foi um dia %s."
 
 onready var PlayerText = $VBoxContainer/HBoxContainer/PlayerText
 onready var DisplayText = $VBoxContainer/DisplayText
 
 func _ready():
+	DisplayText.text = "Bem vindo ao Loony Lips! Nos vamos contar uma historia e ter um otimo momento juntos!"
 	check_player_words_lenght()
 	
-func _on_PlayerText_text_entered():
+func _on_PlayerText_text_entered(new_text):
 	add_to_player_words()
 	
 func _on_TextureButton_pressed():
@@ -18,6 +19,7 @@ func _on_TextureButton_pressed():
 
 func add_to_player_words():
 	player_words.append(PlayerText.text)
+	DisplayText.text = ""
 	PlayerText.clear()
 	check_player_words_lenght()
 
@@ -34,7 +36,7 @@ func tell_story():
 	DisplayText.text = story % player_words
 
 func prompt_player():
-	DisplayText.text = "Posso ter " + prompts[player_words.size()] + ", por favor?"
+	DisplayText.text += "\n\nDigite " + prompts[player_words.size()] + ", por favor?"
 	
 	
 	
