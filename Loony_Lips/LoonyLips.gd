@@ -6,16 +6,21 @@ var story = "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s qu
 
 onready var PlayerText = $VBoxContainer/HBoxContainer/PlayerText
 onready var DisplayText = $VBoxContainer/DisplayText
+onready var ButtonLabel = $VBoxContainer/HBoxContainer/Label
 
 func _ready():
 	DisplayText.text = "Bem vindo ao Loony Lips! Nos vamos contar uma historia e ter um otimo momento juntos!"
 	check_player_words_lenght()
+	PlayerText.grab_focus()
 	
 func _on_PlayerText_text_entered(new_text):
 	add_to_player_words()
 	
 func _on_TextureButton_pressed():
-	add_to_player_words()
+	if is_story_done():
+		get_tree().reload_current_scene()
+	else:
+		add_to_player_words()
 
 func add_to_player_words():
 	player_words.append(PlayerText.text)
@@ -28,19 +33,20 @@ func is_story_done():
 	
 func check_player_words_lenght():
 	if is_story_done():
-		tell_story()
+		end_game()
 	else:
 		prompt_player()
 		
 func tell_story():
 	DisplayText.text = story % player_words
-	end_game()
 
 func prompt_player():
 	DisplayText.text += "\n\nDigite " + prompts[player_words.size()] + ", por favor?"
 	
 func end_game():
 	PlayerText.queue_free()
+	ButtonLabel.text = "Repetir!"
+	tell_story()
 	
 	
 	
