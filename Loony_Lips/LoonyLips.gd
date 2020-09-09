@@ -1,8 +1,10 @@
 extends Control
 
 var player_words = []
-var prompts = ["um nome", "um substantivo", "um adverbio", "um adjetivo"]
-var story = "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fez se sentir %s, por dentro. Este foi um dia %s."
+var current_story = {
+		"prompts": ["um nome", "um substantivo", "um adverbio", "um adjetivo"],
+		"story": "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fez se sentir %s, por dentro. Este foi um dia %s."
+		}
 
 onready var PlayerText = $VBoxContainer/HBoxContainer/PlayerText
 onready var DisplayText = $VBoxContainer/DisplayText
@@ -29,7 +31,7 @@ func add_to_player_words():
 	check_player_words_lenght()
 
 func is_story_done():
-	return player_words.size() == prompts.size()
+	return player_words.size() == current_story.prompts.size()
 	
 func check_player_words_lenght():
 	if is_story_done():
@@ -38,10 +40,10 @@ func check_player_words_lenght():
 		prompt_player()
 		
 func tell_story():
-	DisplayText.text = story % player_words
+	DisplayText.text = current_story.story % player_words
 
 func prompt_player():
-	DisplayText.text += "\n\nDigite " + prompts[player_words.size()] + ", por favor?"
+	DisplayText.text += "\n\nDigite " + current_story.prompts[player_words.size()] + ", por favor?"
 	
 func end_game():
 	PlayerText.queue_free()
