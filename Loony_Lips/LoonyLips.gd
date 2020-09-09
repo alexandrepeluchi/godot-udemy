@@ -34,11 +34,13 @@ func check_player_words_lenght():
 		
 func tell_story():
 	DisplayText.text = story % player_words
+	end_game()
 
 func prompt_player():
 	DisplayText.text += "\n\nDigite " + prompts[player_words.size()] + ", por favor?"
 	
-	
+func end_game():
+	PlayerText.queue_free()
 	
 	
 	
