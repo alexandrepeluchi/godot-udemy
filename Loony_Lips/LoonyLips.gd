@@ -1,20 +1,32 @@
 extends Control
 
 var player_words = []
-var current_story = {
-		"prompts": ["um nome", "um substantivo", "um adverbio", "um adjetivo"],
-		"story": "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fez se sentir %s, por dentro. Este foi um dia %s."
+var template = [
+		{
+			"prompts": ["um nome", "um substantivo", "um adverbio", "um adjetivo"],
+			"story": "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fez se sentir %s, por dentro. Este foi um dia %s."
+		},
+		{
+			"prompts": ["um substantivo", "um nome", "um adjetivo", "outro nome"],
+			"story": "Era uma vez um %s chamado %s, que buscou a vida toda pelo lendário %s do %s."			
 		}
+	]
+var current_story
 
 onready var PlayerText = $VBoxContainer/HBoxContainer/PlayerText
 onready var DisplayText = $VBoxContainer/DisplayText
 onready var ButtonLabel = $VBoxContainer/HBoxContainer/Label
 
 func _ready():
+	set_current_story()
 	DisplayText.text = "Bem vindo ao Loony Lips! Nos vamos contar uma historia e ter um otimo momento juntos!"
 	check_player_words_lenght()
 	PlayerText.grab_focus()
 	
+func set_current_story():
+	randomize()
+	current_story = template[randi() % template.size()]
+
 func _on_PlayerText_text_entered(new_text):
 	add_to_player_words()
 	
