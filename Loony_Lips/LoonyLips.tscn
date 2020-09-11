@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://LoonyLips.gd" type="Script" id=1]
 [ext_resource path="res://gfx/blackboard.jpg" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://new_dynamicfont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://gfx/blue_button11.png" type="Texture" id=5]
 [ext_resource path="res://gfx/blue_button12.png" type="Texture" id=6]
+[ext_resource path="res://Story.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -87,5 +88,22 @@ margin_right = 976.0
 margin_bottom = 68.0
 custom_fonts/font = ExtResource( 4 )
 text = "Ok"
+
+[node name="StoryBook" type="Node" parent="."]
+
+[node name="Story0" type="Node" parent="StoryBook"]
+script = ExtResource( 7 )
+prompts = PoolStringArray( "um nome", "um substantivo", "um adverbio", "um adjetivo" )
+story = "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fez se sentir %s, por dentro. Este foi um dia %s."
+
+[node name="Story1" type="Node" parent="StoryBook"]
+script = ExtResource( 7 )
+prompts = PoolStringArray( "um substantivo", "um nome", "um adverbio", "outro nome" )
+story = "Era uma vez um %s chamado %s, que buscou a vida toda pelo lendario %s do %s."
+
+[node name="Story2" type="Node" parent="StoryBook"]
+script = ExtResource( 7 )
+prompts = PoolStringArray( "um substantivo", "um nome", "outro substantivo" )
+story = "Havia uma xicara de %s chamada %s que buscava a origem do(a) %s."
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/PlayerText" to="." method="_on_PlayerText_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
