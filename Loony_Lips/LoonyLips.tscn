@@ -98,12 +98,22 @@ story = "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fe
 
 [node name="Story1" type="Node" parent="StoryBook"]
 script = ExtResource( 7 )
-prompts = PoolStringArray( "um substantivo", "um nome", "um adverbio", "outro nome" )
-story = "Era uma vez um %s chamado %s, que buscou a vida toda pelo lendario %s do %s."
+prompts = PoolStringArray( "um substantivo", "um nome", "outro nome", "uma coisa" )
+story = "Era uma vez um %s chamado %s, que buscou a vida toda pelo lendario %s %s."
 
 [node name="Story2" type="Node" parent="StoryBook"]
 script = ExtResource( 7 )
 prompts = PoolStringArray( "um substantivo", "um nome", "outro substantivo" )
 story = "Havia uma xicara de %s chamada %s que buscava a origem do(a) %s."
+
+[node name="Story3" type="Node" parent="StoryBook"]
+script = ExtResource( 7 )
+prompts = PoolStringArray( "uma coisa", "um nome", "uma palavra de descricao (um adjetivo)", "outra coisa" )
+story = "Era uma vez um(a) %s chamado(a) %s que vivia %s como um(a) %s."
+
+[node name="Story4" type="Node" parent="StoryBook"]
+script = ExtResource( 7 )
+prompts = PoolStringArray( "um substantivo", "uma palavra de descricao (um adjetivo)", "outro substantivo", "um adjetivo", "mais um substantivo", "um verbo" )
+story = "A melhor receita de pizza. Misture um pacote de %s com três colheres de farinha. Sove a massa por 3 minutos até %s. Abra a massa em um %s e polvilhe uma pitada de %s e três xícaras de %s. Asse por 17 minutos em fogo alto, depois tire do forno para %s!"
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/PlayerText" to="." method="_on_PlayerText_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
