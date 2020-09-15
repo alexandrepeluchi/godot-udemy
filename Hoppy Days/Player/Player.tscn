@@ -8,7 +8,7 @@ radius = 60.1335
 height = 82.8309
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 513.602, 231.831 )
+position = Vector2( 504.693, 254.994 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -18,4 +18,5 @@ __meta__ = {
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
