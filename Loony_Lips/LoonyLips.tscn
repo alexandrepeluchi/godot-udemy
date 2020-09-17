@@ -98,8 +98,8 @@ story = "Era uma vez, alguem chamado %s comeu um sanduiche recheado de %s que fe
 
 [node name="Story1" type="Node" parent="StoryBook"]
 script = ExtResource( 7 )
-prompts = PoolStringArray( "um substantivo", "um nome", "outro nome", "uma coisa" )
-story = "Era uma vez um %s chamado %s, que buscou a vida toda pelo lendario %s %s."
+prompts = PoolStringArray( "um substantivo", "um nome", "uma coisa", "outro nome" )
+story = "Era uma vez um(a) %s chamado(a) %s, que buscou a vida toda pelo(a) lendario(a) %s %s."
 
 [node name="Story2" type="Node" parent="StoryBook"]
 script = ExtResource( 7 )
