@@ -8,12 +8,7 @@
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 506.475, 254.994 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 300 )
-current = true
-zoom = Vector2( 2, 2 )
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 393221, 0, 0, 589819, 0, 0, 524303, 0, 0 )
+tile_data = PoolIntArray( 393221, 0, 0, 589819, 0, 0, 524303, 0, 0, 720896, 2, 0, 720906, 2, 0 )
