@@ -1,4 +1,4 @@
-# Godot Udemy
+# Godot curso da Udemy
 
 Repositório para armazenar tudo que será feito no curso da Udemy.
 
