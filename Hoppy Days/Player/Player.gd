@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
 var motion = Vector2(0, 0)
+var lives = 3
 
-const SPEED = 1000
-const GRAVITY = 100
+const SPEED = 1500
+const GRAVITY = 150
 const UP = Vector2(0 ,-1)
-const JUMP_SPEED = 2250
+const JUMP_SPEED = 3100
 const WORLD_LIMIT = 4500
 
 signal animate
@@ -45,3 +46,10 @@ func animate():
 func end_game():
 	get_tree().change_scene("res://Levels/GameOver.tscn")
 
+func hurt():
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	motion.y -= JUMP_SPEED
+	lives -= 1
+	if lives < 0:
+		end_game()
