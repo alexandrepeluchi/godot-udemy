@@ -11,7 +11,6 @@
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 6 )
-lives = 3
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 499.164, 247.004 )

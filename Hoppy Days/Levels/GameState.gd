@@ -1,6 +1,7 @@
 extends Node2D
 
-export var lives = 5
+export var lives = 3
+export var coins = 0
 
 func _ready():
 	add_to_group("Gamestate")
@@ -16,6 +17,10 @@ func hurt():
 
 func update_GUI():
 	get_tree().call_group("GUI", "update_lives", lives)	
+
+func coin_up():
+	coins += 1
+	get_tree().call_group("GUI", "update_coins", coins)		
 
 func end_game():
 	get_tree().change_scene("res://Levels/GameOver.tscn")
