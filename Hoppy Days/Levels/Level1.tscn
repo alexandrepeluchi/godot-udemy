@@ -50,6 +50,36 @@ position = Vector2( 2618.12, 740.834 )
 [node name="Coin" parent="Coins" instance=ExtResource( 8 )]
 position = Vector2( -131.851, 434.509 )
 
+[node name="Coin2" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( -518.414, -317.641 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 86.9017, -500.434 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( -668.245, 842.048 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 795.191, 780.562 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 1226.96, 1679.03 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 1350.78, 1675.86 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 1480.95, 1675.86 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 1598.42, 1675.86 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 1709.53, 1675.86 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 8 )]
+position = Vector2( 1817.48, 1679.03 )
+
 [node name="JumpPads" type="Node" parent="."]
 
 [node name="JumpPad" parent="JumpPads" instance=ExtResource( 5 )]
