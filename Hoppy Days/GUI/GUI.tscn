@@ -86,11 +86,14 @@ texture = ExtResource( 2 )
 [node name="Left" type="TouchScreenButton" parent="Gamepad"]
 position = Vector2( 20, 500 )
 normal = ExtResource( 6 )
+action = "left"
 
 [node name="Right" type="TouchScreenButton" parent="Gamepad"]
 position = Vector2( 150, 500 )
 normal = ExtResource( 7 )
+action = "right"
 
-[node name="Up" type="TouchScreenButton" parent="Gamepad"]
+[node name="Jump" type="TouchScreenButton" parent="Gamepad"]
 position = Vector2( 923.941, 500 )
 normal = ExtResource( 8 )
+action = "jump"
