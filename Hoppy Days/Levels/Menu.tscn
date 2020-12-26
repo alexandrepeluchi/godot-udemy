@@ -10,14 +10,14 @@
 [ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=8]
 [ext_resource path="res://GFX/Particles/portal_yellowParticle.png" type="Texture" id=9]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 200
 outline_size = 10
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 1
 emission_sphere_radius = 59.84
 flag_disable_z = true
@@ -97,7 +97,7 @@ margin_bottom = 951.0
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 1144.0
 margin_bottom = 511.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.976471, 0.792157, 0.141176, 1 )
 text = "Coelhinhos 
    da Dai"
@@ -118,7 +118,7 @@ texture_normal = ExtResource( 7 )
 position = Vector2( 537.382, 171.203 )
 amount = 32
 lifetime = 2.0
-process_material = SubResource( 3 )
+process_material = SubResource( 2 )
 texture = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
