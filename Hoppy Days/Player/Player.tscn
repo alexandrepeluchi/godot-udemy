@@ -26,6 +26,7 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="PlayerAnimation" parent="." instance=ExtResource( 1 )]
+animation = "hurt"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
