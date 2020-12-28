@@ -19,6 +19,10 @@ config/name="Hoppy Days"
 run/main_scene="res://Levels/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=1920
