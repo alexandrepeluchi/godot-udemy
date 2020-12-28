@@ -11,6 +11,11 @@ const BOOST_MULTIPLIER = 1.5
 
 signal animate
 
+func _ready():
+	add_child(load("res://Player/PlayerAnimation%d.tscn" % Global.character).instance())	
+	var animationPlayer = get_node("PlayerAnimation")
+	self.connect("animate", animationPlayer, "_on_Player_animate")
+
 func _physics_process(delta):
 	apply_gravity()
 	move()
