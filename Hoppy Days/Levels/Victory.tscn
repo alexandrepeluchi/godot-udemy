@@ -14,6 +14,7 @@ margin_right = 1545.0
 
 [node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
 margin_right = 1171.0
+custom_colors/font_color = Color( 0.356863, 1, 0.352941, 1 )
 text = "You Win!"
 
 [node name="HBoxContainer" parent="CenterContainer/VBoxContainer" index="1"]
@@ -26,6 +27,11 @@ text = "Play Again!"
 
 [node name="RestartButton" parent="CenterContainer/VBoxContainer/HBoxContainer" index="1"]
 margin_left = 803.0
-margin_top = 0.0
 margin_right = 1103.0
-margin_bottom = 300.0
+
+[node name="HBoxContainer2" parent="CenterContainer/VBoxContainer" index="2"]
+margin_right = 1171.0
+
+[node name="Exit" parent="CenterContainer/VBoxContainer/HBoxContainer2" index="0"]
+margin_left = 510.0
+margin_right = 660.0
