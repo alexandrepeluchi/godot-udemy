@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://GFX/Background/bg_layer2.png" type="Texture" id=1]
 [ext_resource path="res://GFX/Background/bg_layer4.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://GFX/Players/bunny5_ready.png" type="Texture" id=8]
 [ext_resource path="res://GFX/Players/bunny4_ready.png" type="Texture" id=9]
 [ext_resource path="res://GFX/Players/bunny3_ready.png" type="Texture" id=10]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -136,6 +137,11 @@ text = " Isa "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -15.0
+autoplay = true
 [connection signal="pressed" from="CenterContainer/HBoxContainer/Dai" to="." method="_on_Dai_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/Duh" to="." method="_on_Duh_pressed"]
 [connection signal="pressed" from="CenterContainer/HBoxContainer/Bru" to="." method="_on_Bru_pressed"]
