@@ -1,0 +1,5 @@
+[gd_scene format=2]
+
+[node name="Torch" type="Light2D"]
+shadow_enabled = true
+shadow_color = Color( 0.196078, 0.176471, 0.176471, 0 )
