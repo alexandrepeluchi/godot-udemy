@@ -24,6 +24,16 @@ color = Color( 0.313726, 0.313726, 0.313726, 1 )
 [node name="TemplateCharacter" parent="." instance=ExtResource( 3 )]
 position = Vector2( 377.142, 87.0328 )
 
-[node name="Camera" parent="." instance=ExtResource( 4 )]
+[node name="Cameras" type="Node" parent="."]
+
+[node name="Camera" parent="Cameras" instance=ExtResource( 4 )]
 position = Vector2( 387.413, -177.319 )
 rotation = 1.57087
+
+[node name="Camera2" parent="Cameras" instance=ExtResource( 4 )]
+position = Vector2( -108.269, -113.326 )
+rotation = 1.57087
+
+[node name="Camera3" parent="Cameras" instance=ExtResource( 4 )]
+position = Vector2( -368.838, 103.756 )
+rotation = -0.00485483
