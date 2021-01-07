@@ -10,7 +10,7 @@ func _ready() -> void:
 	Player = get_node("/root").find_node("Player", true, false)
 	
 func _process(delta: float):
-	if Player_in_FOV():
+	if Player_in_FOV() and Player_in_LOS():
 		$Torch.color = RED
 	else:
 		$Torch.color = WHITE
@@ -20,6 +20,20 @@ func Player_in_FOV() -> bool:
 	var direction_to_Player := Vector2( (Player.position - global_position).normalized() )
 
 	if abs(direction_to_Player.angle_to(npc_facing_direction)) < deg2rad(FOV_TOLERANCE):
+		return true
+	else:
+		return false
+
+func Player_in_LOS() -> bool:
+	var space := get_world_2d().direct_space_state
+	var LOS_obstacle = space.intersect_ray(global_position, Player.global_position, [self], collision_mask)
+	
+	if not LOS_obstacle:
+		return false
+	
+	var distance_to_player = Player.global_position.distance_to(global_position)
+	
+	if LOS_obstacle.collider == Player:
 		return true
 	else:
 		return false
