@@ -17,7 +17,7 @@ func _on_Numpad_combination_correct():
 	$CanvasLayer/Numpad.hide()
 
 func generate_combination():
-	var length: int = 8
+	var length: int = 4
 	var combination = CombinationGenerator.generate_combination(length)
 	print(combination)
 	$CanvasLayer/Numpad.combination = combination
