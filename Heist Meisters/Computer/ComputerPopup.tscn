@@ -6,7 +6,6 @@
 [ext_resource path="res://Interface/Theme.tres" type="Theme" id=4]
 
 [node name="ComputerPopup" type="Popup"]
-visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 600, 480 )

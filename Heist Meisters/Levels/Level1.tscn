@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/TemplateLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/NPCs/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/NPCs/Guard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Doors/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Doors/LockedDoor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Computer/Computer.tscn" type="PackedScene" id=6]
 
 [node name="TemplateLevel" instance=ExtResource( 1 )]
 
@@ -33,7 +34,10 @@ position = Vector2( 292.409, 1190.53 )
 position = Vector2( 92.3968, 925.429 )
 
 [node name="Furniture" parent="Navigation2D" index="2"]
-tile_data = PoolIntArray( 196622, 1073741828, 0, 262157, 536870915, 0, 262158, 1073741826, 0, 262159, 1073741827, 0, 458763, -2147483643, 0, 524292, 6, 0, 524293, 1073741831, 0, 524294, 1610612744, 0, 524295, 1610612743, 0, 655373, 1073741830, 0, 786445, 6, 0, 851970, 6, 0, 1114110, 1073741828, 0, 1048577, 1073741828, 0, 1048585, 6, 0, 1179645, 536870915, 0, 1179646, 1073741827, 0, 1114112, 536870915, 0, 1114113, 1073741827, 0, 1179661, 1610612739, 0, 1179662, 2, 0, 1179663, 3, 0, 1245189, 6, 0, 1245198, 4, 0, 1376254, 536870921, 0, 1376255, 536870918, 0, 1310720, 536870921, 0, 1310721, 536870918, 0, 1310722, 536870921, 0 )
+tile_data = PoolIntArray( 196622, 1073741828, 0, 262157, 536870915, 0, 262158, 1073741826, 0, 262159, 1073741827, 0, 458763, -2147483643, 0, 524292, 6, 0, 524293, 1073741831, 0, 524294, 1610612744, 0, 524295, 1610612743, 0, 720893, 1610612739, 0, 720894, 2, 0, 720895, 3, 0, 655373, 1073741830, 0, 786445, 6, 0, 851970, 6, 0, 1114110, 1073741828, 0, 1048577, 1073741828, 0, 1048585, 6, 0, 1179645, 536870915, 0, 1179646, 1073741827, 0, 1114112, 536870915, 0, 1114113, 1073741827, 0, 1179661, 1610612739, 0, 1179662, 2, 0, 1179663, 3, 0, 1245189, 6, 0, 1245198, 4, 0, 1376254, 536870921, 0, 1376255, 536870918, 0, 1310720, 536870921, 0, 1310721, 536870918, 0, 1310722, 536870921, 0 )
+
+[node name="Player" parent="." index="1"]
+position = Vector2( -73.7565, 588.09 )
 
 [node name="Camera" parent="Cameras" index="0" instance=ExtResource( 2 )]
 position = Vector2( 326.189, 1093.66 )
@@ -55,25 +59,29 @@ position = Vector2( 768.302, 828.623 )
 rotation = -5.4417
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource( 4 )]
-position = Vector2( 96.1732, 928.242 )
+position = Vector2( 927.724, 733.977 )
 
 [node name="Door2" parent="Doors" index="1" instance=ExtResource( 4 )]
-position = Vector2( 286.458, 1184.45 )
+position = Vector2( 96.1664, 926.31 )
+
+[node name="Door3" parent="Doors" index="2" instance=ExtResource( 4 )]
+position = Vector2( 224.86, 479.419 )
+
+[node name="Door4" parent="Doors" index="3" instance=ExtResource( 4 )]
+position = Vector2( 544.472, 478.004 )
+
+[node name="Door5" parent="Doors" index="4" instance=ExtResource( 4 )]
+position = Vector2( 288.853, 1184.4 )
 rotation = 1.5708
 
-[node name="Door4" parent="Doors" index="2" instance=ExtResource( 4 )]
-position = Vector2( 928.483, 735.709 )
-
-[node name="Door5" parent="Doors" index="3" instance=ExtResource( 4 )]
-position = Vector2( 544.916, 478 )
-
-[node name="Door6" parent="Doors" index="4" instance=ExtResource( 4 )]
-position = Vector2( 223.529, 478 )
-
-[node name="Door7" parent="Doors" index="5" instance=ExtResource( 4 )]
-position = Vector2( 674.464, 1121.05 )
+[node name="Door6" parent="Doors" index="5" instance=ExtResource( 4 )]
+position = Vector2( 671.461, 1119.66 )
 rotation = 1.5708
 
 [node name="LockedDoor" parent="LockedDoors" index="0" instance=ExtResource( 5 )]
-position = Vector2( 31.7312, 610.573 )
+position = Vector2( 32.8536, 608.889 )
 rotation = 1.57102
+
+[node name="Computer" parent="Computers" index="0" instance=ExtResource( 6 )]
+position = Vector2( -150.117, 673.144 )
+rotation = -1.5708
