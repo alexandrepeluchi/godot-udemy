@@ -2,13 +2,13 @@ extends Area2D
 
 var can_click: bool = false
 
-func _on_Door_body_entered(body: KinematicBody2D):
+func _on_Door_body_entered(body):
 	if body.collision_layer == 1:
 		can_click = true
 	else:
 		open()
 
-func _on_Door_body_exited(body: KinematicBody2D):
+func _on_Door_body_exited(body):
 	if body.collision_layer == 1:
 		can_click = false
 
