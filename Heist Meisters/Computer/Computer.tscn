@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://GFX/PNG/Tiles/tile_537.png" type="Texture" id=1]
 [ext_resource path="res://Computer/Computer.gd" type="Script" id=2]
 [ext_resource path="res://Computer/ComputerPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GFX/PNG/Tiles/tile_519.png" type="Texture" id=4]
+[ext_resource path="res://Interface/Theme.tres" type="Theme" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 48, 32 )
@@ -32,6 +33,17 @@ position = Vector2( 32, 0 )
 rotation = 1.5708
 enabled = false
 texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 38.0
+margin_top = -38.0
+margin_right = 118.0
+margin_bottom = -11.0
+theme = ExtResource( 5 )
+text = "Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
