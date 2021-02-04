@@ -21,3 +21,6 @@ func generate_combination():
 	var combination = CombinationGenerator.generate_combination(length)
 	print(combination)
 	$CanvasLayer/Numpad.combination = combination
+
+func _on_Computer_combination(combination, lock_group):
+	$CanvasLayer/Numpad.combination = combination
