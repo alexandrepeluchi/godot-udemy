@@ -2,6 +2,11 @@ extends "res://Characters/TemplateCharacter.gd"
 
 var motion := Vector2()
 
+const PLAYER_SPRITE = "res://GFX/PNG/Hitman 1/hitman1_stand.png"
+const BOX_SPRITE = "res://GFX/PNG/Tiles/tile_130.png"
+
+var disguised: bool = false
+
 func _physics_process(delta: float) -> void:
 	update_movement()
 	move_and_slide(motion)
@@ -23,5 +28,24 @@ func update_movement() -> void:
 		motion.x = lerp(motion.x, 0, FRICTION)
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("toggle_vision_mode"):
+	if Input.is_action_just_pressed("toggle_vision_mode"):
 		get_tree().call_group("Interface", "cycle_vision_mode")
+	if Input.is_action_just_pressed("toggle_disguise"):
+		toggle_disguise()
+
+func toggle_disguise():
+	if disguised:
+		reveal()
+	else:
+		disguise()
+
+func reveal():
+	$Sprite.texture = load(PLAYER_SPRITE)
+	disguised = false
+	collision_layer = 1
+	
+func disguise():
+	$Sprite.texture = load(BOX_SPRITE)
+	disguised = true
+	collision_layer = 16
+	
