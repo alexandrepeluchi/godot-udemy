@@ -24,6 +24,9 @@ func _physics_process(delta: float) -> void:
 	update_movement()
 	move_and_slide(motion * velocity_multiplier)
 	
+	if disguised:
+		$DisguiseLabel.text = str($Timer.time_left).pad_decimals(2)
+	
 func update_movement() -> void:
 	look_at(get_global_mouse_position())
 	if Input.is_action_pressed("move_down") and not Input.is_action_pressed("move_up"):
@@ -56,6 +59,7 @@ func reveal():
 	$Sprite.texture = load(PLAYER_SPRITE)
 	$Light2D.texture = load(PLAYER_LIGHT)	
 	$LightOccluder2D.occluder = load(PLAYER_OCCLUDER)
+	$DisguiseLabel.hide()
 	
 	velocity_multiplier = 1.0
 	
@@ -66,6 +70,7 @@ func disguise():
 	$Sprite.texture = load(BOX_SPRITE)
 	$Light2D.texture = load(BOX_LIGHT)
 	$LightOccluder2D.occluder = load(BOX_OCCLUDER)
+	$DisguiseLabel.show()	
 	
 	velocity_multiplier = disguise_slowdown
 	
