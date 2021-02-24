@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	
 	if disguised:
 		$DisguiseLabel.text = str($Timer.time_left).pad_decimals(2)
+		$DisguiseLabel.rect_rotation = -rotation_degrees
 	
 func update_movement() -> void:
 	look_at(get_global_mouse_position())
