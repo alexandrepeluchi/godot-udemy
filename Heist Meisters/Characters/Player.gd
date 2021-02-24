@@ -15,6 +15,7 @@ var velocity_multiplier: float = 1.0
 var disguised: bool = false
 export var disguise_slowdown: float = 0.25
 export var disguise_duration: float = 5.0
+export var number_of_disguises: int = 3
 
 func _ready():
 	$Timer.wait_time = disguise_duration
@@ -53,7 +54,7 @@ func _input(event: InputEvent) -> void:
 func toggle_disguise():
 	if disguised:
 		reveal()
-	else:
+	elif number_of_disguises > 0:
 		disguise()
 
 func reveal():
@@ -74,6 +75,7 @@ func disguise():
 	$DisguiseLabel.show()	
 	
 	velocity_multiplier = disguise_slowdown
+	number_of_disguises -= 1
 	
 	disguised = true
 	collision_layer = 16
