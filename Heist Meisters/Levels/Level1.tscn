@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/TemplateLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/NPCs/Camera.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Doors/Door.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Doors/LockedDoor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Computer/Computer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Loot/Briefcase.tscn" type="PackedScene" id=7]
 
 [node name="TemplateLevel" instance=ExtResource( 1 )]
 
@@ -38,6 +39,9 @@ tile_data = PoolIntArray( 196622, 1073741828, 0, 262157, 536870915, 0, 262158, 1
 
 [node name="Player" parent="." index="1"]
 position = Vector2( -73.7565, 588.09 )
+
+[node name="Briefcase" parent="Loot" index="0" instance=ExtResource( 7 )]
+position = Vector2( 739.574, 157.49 )
 
 [node name="Camera" parent="Cameras" index="0" instance=ExtResource( 2 )]
 position = Vector2( 326.189, 1093.66 )

@@ -288,6 +288,8 @@ current = true
 
 [node name="VisionMode" parent="." instance=ExtResource( 4 )]
 
+[node name="Loot" type="Node" parent="."]
+
 [node name="Cameras" type="Node" parent="."]
 
 [node name="Guards" type="Node" parent="."]
