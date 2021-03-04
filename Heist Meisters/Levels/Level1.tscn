@@ -90,4 +90,10 @@ rotation = 1.57102
 position = Vector2( -150.117, 673.144 )
 rotation = -1.5708
 lock_group = "1"
+
+[node name="Exit" parent="." index="10"]
+margin_left = 258.801
+margin_top = 239.002
+margin_right = 458.801
+margin_bottom = 339.002
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]
