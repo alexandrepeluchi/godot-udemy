@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 CombinationGenerator="*res://Doors/CombinationGenerator.gd"
+BackgroundMusic="*res://Music/BackgroundMusic.tscn"
 
 [input]
 
