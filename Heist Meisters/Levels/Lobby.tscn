@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GFX/Interface/Fonts/kenvector_future.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GFX/Interface/PNG/metalPanel_blue.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://GFX/Interface/PNG/barHorizontal_shadow_left.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Interface/PNG/barHorizontal_shadow_right.png" type="Texture" id=5]
 [ext_resource path="res://GFX/Interface/PNG/barHorizontal_shadow_mid.png" type="Texture" id=6]
+[ext_resource path="res://Levels/Lobby.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -16,6 +17,7 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -144,7 +146,7 @@ margin_right = 320.0
 margin_bottom = 68.0
 columns = 2
 
-[node name="Button" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+[node name="StartButton" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
@@ -157,7 +159,7 @@ margin_bottom = 29.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Start mission"
 
-[node name="Button2" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
+[node name="QuitButton" type="Button" parent="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
@@ -170,3 +172,5 @@ margin_right = 264.0
 margin_bottom = 65.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "quit game"
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CenterContainer/Background/VBoxContainer/CenterContainer/GridContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
